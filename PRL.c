@@ -4,15 +4,12 @@ Creator: Jonathan Harris
 Advisors: Zach Zimmerman, Braden McDorman, Nathan Povendo, Qbit
 the Plainview Robotics Library is the entire collection of commands used by the Plainview Robotics Team.
 SETUP:
-The setup of this library for use is extremely easy and only requires a couple of steps.
-1. The first thing that needs to be done is adding the following two lines ABOVE the include for this library in the main.c file:
-    #include <stdlib.h>
-    #include <math.h>
-2. If you are using the library for a demo bot (anything but the create), then you need to call the function set_wheel_ticks(float l, float r)
-	at the beginning of your code even before wait for light or anything else. The parameters should be the ticks it takes for each wheel to turn the bot 90 degrees
-    from a pivot turn. use spin_motor(int ticks, int speed, int port) to spin the motor (speed 500 is recomended).
-3. If you are using a create bot then disreguard step 2 and use the function create_activate() instead of the usual create_connect() function. This will 
-	notify the library that a create is in use so that it will use the correct functions
+
+1. First scroll down to the main() function. That is where you will put your code. To start off with,
+	if you want your bot to start once the light sensor is triggered (for competitions), start the code with
+ 	"competition_start(port);" where port is the port number the light sensor is plugged into. Following that,
+  	make sure to call create3.connect(); if you are using a create bot, AND enable_servos(); if you are using any 
+   	servos.
 USE:
 	Everything SHOULD be ordered with parameters distance>speed>port>misc
 
@@ -27,6 +24,10 @@ waypoint_drive(points,200,5, sizeof(points)/sizeof(points[0]));
 */
 
 //speed to ticks_per_second = (1.08 * abs(speed)) - 2
+#include <stdlib.h>
+#include <math.h>
+#include <kipr/wombat.h>
+
 #define pi 3.14159265359
 #define right_wheel 2
 #define left_wheel 0
@@ -1109,4 +1110,12 @@ void drive_skew(float y, float x, float speed){
         left_turn(deg, speed,radius);
         right_turn(deg, speed, radius);
     }
+}
+void competition_start(port) {
+    wait_for_light(port);
+    shut_down_in(119);
+}
+int main() {
+	//your code goes here
+	return 0;
 }
