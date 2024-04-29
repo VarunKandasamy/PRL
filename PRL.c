@@ -1,8 +1,4 @@
 /*
-PRL v1.9.5
-Creator: Jonathan Harris
-Advisors: Zach Zimmerman, Braden McDorman, Nathan Povendo, Qbit
-the Plainview Robotics Library is the entire collection of commands used by the Plainview Robotics Team.
 SETUP:
 
 1. First scroll down to the main() function. That is where you will put your code. To start off with,
