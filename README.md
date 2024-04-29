@@ -1,11 +1,11 @@
 # PRL
 The official Plainview Robotics Library for Botball
 
-Creator: Jonathan Harris
-Advisors: Zach Zimmerman, Braden McDorman, Nathan Povendo, Qbit
+Original Creator: Jonathan Harris
+Added onto by Varun Kandasamy
 
 -----------------------------------------------
 
-Here is a list of commands and a link to the exlplenation for each of them:
+Here is a list of commands and a link to the exlplanation for each of them:
 
 
